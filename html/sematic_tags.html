@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!--sematic tags: functionally same as div but has its own meaning and role for the page-->
+<body>
+  <!--header: title of the area-->
+  <header>This is header</header>
+  <!--nav: consists of links or menus-->
+  <nav>This is nav</nav>
+  <!--footer: opposite of header (Ex: address)-->
+  <footer>This is footer</footer>
+  <!--main: main content of page. one and only-->
+  <main>This is main</main>
+  <!--aside: side content (Ex: sidebar)-->
+  <aside>This is aside</aside>
+  <!--section: divide the page-->
+  <section>This is section</article>
+  <!--article: recycle or independent factors-->
+  <article>This is article</article>
+
+  <!--naming-->
+  <!--1) use class names-->
+  <!--
+    .card { /* ... */ }
+    .card .thumb { /* ... */ }
+    .card .thumb .image { /* ... */ }
+    .card .body .title { /* ... */ }
+    .card .body .list { /* ... */ }
+    .card .body .list .list-item { /* ... */ }
+    .card .body .list .list-item.special { /* ... */ }
+  -->
+
+  <!--2) use BEM(Block Element Modifier)-->
+  <!--.BLOCK__ELEMENT--MODIFIER(ex: special, soldout) { /* ... */ }-->
+  <!--
+    BEM example:
+    .card { /* ... */ }
+    .card__thumb { /* ... */ }
+    .card__image { /* ... */ }
+    .card__title { /* ... */ }
+    .card__list { /* ... */ }
+    .card__list-item { /* ... */ }
+    .card__list-item--special { /* ... */ }
+  -->
+</body>
+</html>
