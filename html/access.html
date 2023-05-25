@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+  </style>
+</head>
+<body>
+  <!--must include alt for every img-->
+  <img src="house-shape.png" alt="홈으로">
+  <!--alt needed for screen reader even when there is a text already-->
+  <img src="shopping-cart.png" alt="">
+  장바구니에 담기
+
+  <img src="./sr-only.png" alt="">
+  <p class="sr-only">
+    노트북으로 뭔가 공부하고 있는 아이의 독백: 코딩을 배우면 아마 굶지는 않을거랬어.
+  </p>
+  
+  <!--aria-label로 screen reader가 어떻게 읽을지 정해줌-->
+  <div class="page-buttons">
+    <button aria-label="before page">◀</button>
+    <button aria-label="to 1st page(current page)" class="current">1</button>
+    <button aria-label="to 2nd page">2</button>
+    <button aria-label="to 3rd page">3</button>
+    <button aria-label="next page">▶</button>
+  </div>
+
+  <!--hiding/setting-->
+  <div class="happy">
+    <span aria-hidden="true">😀</span> 반갑습니다!
+  </div>
+  <p>
+    to hide emoji from screen reader use<br>
+    <strong>aria-hidden</strong> to <em>true</em>
+    <!--aria-hidden neglected-->
+  </p>
+
+  <br>
+
+  <div class="heart">
+    I <span role="img" aria-label="love">❤️</span> CODING!
+  </div>
+  <p>
+    read emoji as text <br>
+    <strong>role</strong> to img <br>
+    <strong>aria-label</strong> to "value of emoji"
+  </p>
+
+  <!--more info @ https://www.w3.org/WAI/fundamentals/accessibility-intro/ko
+  @ https://nuli.navercorp.com/-->
+</body>
+</html> 
