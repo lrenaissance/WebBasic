@@ -1,0 +1,99 @@
+/*배경 설정*/
+#about { /*id가 about*/
+  background-color: var(--color-light-bg);
+}
+
+/*카드 레이아웃*/
+.about {
+  display: inline-flex;
+  gap: 1em;
+  margin-top: 48px;
+}
+
+/*카드.아이콘*/
+.about__card {
+  padding: 48px;
+  text-align: center; /*텍스트 가운데*/
+  color: white;
+  background-color: var(--color-dark);
+  border-radius: 12px; /*모서리 둥글게*/
+}
+.about__icon {
+  width: 120px;
+  opacity: 0.25; /*반투명*/
+}
+
+/*카드 안 텍스트*/
+.about__title {
+  margin-top: 0.6em;
+  font-size: var(--font-size-larger);
+  font-weight: bold;
+}
+
+.about__title._1 {
+  color: #FFB974;
+}
+.about__title._2 {
+  color: #6BB0F3;
+}
+.about__title._3 {
+  color: #FFBDCE;
+}
+
+.about__text {
+  margin-top: 0.8em;
+  font-size: var(--font-size-text);
+}
+
+/*mobile*/
+@media (max-width: 768px) {
+  /*카드 레이아웃 세로로*/
+  .about {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+/*desktop*/
+@media (min-width: 769px) {
+  #about {
+    grid-column: 1 / -1; /*화면 꽉 채우기*/
+  }
+
+  /*카드.아이콘*/
+  .about__card {
+    position: relative;
+    width: 320px;
+    cursor: pointer;
+    transition: all 350ms;
+  }
+
+  /*마우스 오버시 해당 카드 외 축소 기능*/
+  .about:hover .about__card:not(:hover) {
+    /*선택 안 됨->크기 축소*/
+    transform: scale(0.9);
+  }
+
+  /* 흐림 필터링을 위한 덮개 */
+  /*가상 요소를 만들어 덮어버리기*/
+  .about:hover .about__card:not(:hover)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+  }
+
+  /*롤오버된 카드*/
+  .about__card:hover {
+    /*크기 키우기*/
+    transform: scale(1.04);
+  }
+  .about__card:hover .about__icon {
+    /*아이콘 불투명하게*/
+    opacity: 1;
+  }
+}
