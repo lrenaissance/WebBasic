@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!--<form>은 정보를 제출하기 위한 태그를 포함. form 내에서 input이 이뤄짐-->
+  <!--<input>: 입력받는 요소-->
+  <!--<label>로 input을 수식하는 라벨-->
+  <!--id는 페이지 내에서 고유해야함-->
+  <form>
+    <fieldset> <!--form 내에서 input과 label을 그룹화-->
+      <legend> This is Legend1 </legend>
+      <label> Label1 </label>
+      <input>
+    </fieldset>
+    <br>
+    <fieldset disabled>
+      <legend> This is Legend2, disabled </legend>
+      <label> Label2 </label>
+      <input>
+    </fieldset>
+  </form>
+  <br><br>
+
+  <!--더 많은 input @ https://developer.mozilla.org/ko/docs/Web/HTML/Element/Input -->
+
+  <form action="#">
+    <label for="txt">text</label> <br>
+    <!--if(label for==input id) then click space spanned-->
+    <input 
+      id="txt"
+      type="text"
+      placeholder="this is placeholder"
+      maxlength="5" 
+    >
+    <br><br>
+
+    <!--type: password -> hide-->
+    <label for="pwd">password</label> <br>
+    <input
+      id="pwdIp"
+      type="password"
+      placeholder="minlength:4"
+      minlength="4"
+    >
+    <br><br>
+
+    <!--type: search -> push x to erase-->
+    <label for="search">search</label> <br>
+    <input 
+      id="search" 
+      type="search"
+      placeholder="erase by x"
+      >
+    <br><br>
+
+     <!--type: tel -> number-->
+    <label for="tel">tel</label> <br>
+    <input 
+    id="tel" 
+    type="tel">
+    <br><br>
+    <button type="submit">submit</button>
+  </form>
+
+  <br><br>
+
+  <form action="#">
+     <!--type: number -> number up & down-->
+      <!--choose the range using min/max-->
+    <label for="num">number</label> <br>
+    <input 
+      id="num"
+      type="number"
+      min="0"
+      max="10"
+    >
+    <br><br>
+
+     <!--type: range -> slider-->
+      <!--step: move as much as step(no step)-->
+    <label for="range">range</label> <br>
+    <input
+      id="range"
+      type="range"
+      min="0"
+      max="100"
+      step="20"
+    >
+    <br><br>
+
+     <!--type: date -> number-->
+     <!--min: earliest date to accept-->
+     <!--max: latest date to accept-->
+    <label for="date">date</label> <br>
+    <input
+      id="date"
+      type="date"
+      min="2020-01-01"
+      max="2030-12-31"
+    >
+    <br><br>
+
+  </form>
+
+  <form action="#">
+    <label for="emlIp">email</label> <br>
+    <input 
+      id="emlIp"
+      type="email"
+    >
+    <br><br>
+
+    <button type="submit">제출</button>
+  </form>
+
+  <!--checkbox / radio-->
+  <form action="#">
+    <!--type: checkbox -> number-->
+    <!--label @ end-->
+    <!--checked: start as checked-->
+    <h2>checkbox</h2>
+    <input 
+      id="checkbox"
+      type="checkbox"
+      checked
+    >
+    <label for="checkbox">label here</label> <br>
+
+    <!--type: radio -> can choose more than one-->
+    <!--same name, same group -> one choice per group-->
+    <!--checked: start as checked-->
+    <!--value: the value to be sent-->
+    <h2>radio</h2>
+    <input
+      type="radio"
+      name="asia"
+      id="seoul"
+      value="seoul"
+      checked
+    >
+    <label for="f_apple">Seoul</label>
+    <input
+      type="radio"
+      name="asia"
+      id="tokyo"
+      value="tokyo"
+    >
+    <label for="tokyo">Tokyo</label>
+    <input
+      type="radio"
+      name="asia"
+      id="beijing"
+      value="beijing"
+    >
+    <label for="beijing">Beijing</label>
+    <br>
+
+    <input
+      type="radio"
+      name="europe"
+      id="london"
+      value="london"
+      checked
+    >
+    <label for="london">London</label>
+    <input
+      type="radio"
+      name="europe"
+      id="paris"
+      value="paris"
+    >
+    <label for="paris">Paris</label>
+    <input
+      type="radio"
+      name="europe"
+      id="vienna"
+      value="vienna"
+    >
+    <label for="vienna">Vienna</label>
+  </form>
+  <br><br>
+
+  <!--file, hidden, email-->
+  <form action="#">
+    <!--type: file -> add file-->
+    <!--accept: file type to accept-->
+    <!--multiple: if not, only one file-->
+    <label for="file">file</label> <br>
+    <input 
+      id="file"
+      type="file"
+      accept="image/png, image/jpeg"
+      multiple
+    >
+    <br><br>
+    <!--type: hidden -> to hide info-->
+    <label for="hidden">hidden</label> <br>
+    <input
+      id="hidden"
+      type="hidden"
+    >
+  </form>
+
+  <br><hr><br>
+
+  <!--type: email -> add email address-->
+  <!--only accepts text with @-->
+  <form action="#">
+    <label for="email">email</label> <br>
+    <input 
+      id="email"
+      type="email"
+    >
+    <br><br>
+
+    <button type="submit">제출</button>
+  </form>
+
+  <!--attributes-->
+  <form action="#">
+    <!--value: the value is written already-->
+    <label for="value">value</label> <br>
+    <input 
+      id="value"
+      type="text"
+      value="지정됨"
+    >
+    <br><br>
+
+    <!--autofocus: this is selected already(no need to click)-->
+    <label for="autofocus">autofocus</label> <br>
+    <input 
+      id="autofocus"
+      type="text"
+      placeholder="autofocus"
+      autofocus
+    >
+    <br><br>
+    <!--readonly: read only, but the info is sent-->
+    <label for="roIp">readonly</label> <br>
+    <input 
+      id="roIp"
+      type="text"
+      value="read only, sent"
+      readonly
+    >
+    <br><br>
+     <!--required: necessary to submit-->
+    <label for="rqIp">required</label> <br>
+    <input 
+      id="rqIp"
+      type="text"
+      placeholder="must"
+      required
+    >
+    <br><br>
+
+     <!--disabled: read only, not sent-->
+    <label for="disabled">disabled</label> <br>
+    <input 
+      id="daIp"
+      type="text"
+      placeholder="read only, not sent"
+      disabled
+    >
+    <br><br>
+    <input
+      type="radio"
+      name="fruit"
+      id="f_apple"
+      value="apple"
+      checked
+    >
+    <label for="f_apple">Apple</label>
+    <input
+      type="radio"
+      name="fruit"
+      id="f_grape"
+      value="grape"
+    >
+    <label for="f_grape">Grape</label>
+     <!--cannot select this because it's disabled-->
+    <input
+      type="radio"
+      name="fruit"
+      id="f_orange"
+      value="orange"
+      disabled
+    >
+    <label for="f_orange">Orange(out of stock)</label>
+    <br><br>
+    <button type="submit">제출</button>
+  </form>
+  <br><br>
+  
+  <!--장문의 text 입력-->
+  <!--cols:너비(default:20), rows:높이-->
+  <textarea name="" id="" cols="30" rows="10">Hello World!</textarea>
+  <br><br>
+  <!--select-option-->
+  <label for="fruits">언어</label> <br>
+  <!--multiple: press shift to choose multiple selections-->
+  <select id="fruits" multiple>
+    <option value="" selected>--choose--</option> <!--value: value to send-->
+    <!--selected: start as selected-->
+    <option value="apple">Apple</option>
+    <option value="banana">Banana</option>
+    <option value="mango">Mango</option>
+  </select>
+  <br><br>
+
+  <!--optgroup: group별로 option-->
+  <label for="shopping">쇼핑 목록</label> <br>
+  <select id="shopping">
+    <optgroup label="fru">
+      <option value="f_apl">사과</option>
+      <option value="f_grp">포도</option>
+      <option value="f_org">오렌지</option>
+    </optgroup>
+    <optgroup label="vege">
+      <option value="v_crt">당근</option>
+      <option value="v_tmt">토마토</option>
+      <option value="v_ept">가지</option>
+    </optgroup>
+    <optgroup label="meat">
+      <option value="m_bef">소고기</option>
+      <option value="m_prk">돼지고기</option>
+      <option value="m_ckn">닭고기</option>
+    </optgroup>
+  </select>
+
+  <br><br>
+
+  <!--datalist-->
+  <!--can see recommendation-->
+  <label for="color">Colors</label> <br>
+  <input id="color" list="colors"> <!--datalist id==list id -> connected else: nothing-->
+  <datalist id="colors">
+    <option value="blue">
+    <option value="green">
+    <option value="yellow">
+  </datalist>
+
+  <br><br>
+  <!--progress-->
+  <progress 
+    id="progressBar" 
+    max="100"
+    value="50"> <!--max: maximum value-->
+   50% <!--안 써도 되지만 명시-->
+  </progress>
+  <button id="prgStartBtn" type="button">시작</button>
+
+  <br><br>
+  <!--meter: fixed-->
+  <meter 
+    min="0" max="100" 
+    low="33" high="67"
+    optimum="50" value="20">
+    <!--min/max-->
+    <!--low/high: divide the bar-->
+    <!--optimum: optimal value-->
+    20
+  </meter>
+  
+  <meter 
+    min="0" max="100"
+    low="33" high="67"
+    optimum="50" value="50">
+    50
+  </meter>
+
+  <meter 
+    min="0" max="100"
+    low="33" high="67"
+    optimum="50" value="80">
+    80
+  </meter>
+
+  <br>
+
+  <meter 
+    min="0" max="100"
+    low="33" high="67"
+    optimum="10" value="20">
+    20
+  </meter>
+
+  <meter 
+    min="0" max="100"
+    low="33" high="67"
+    optimum="10" value="50">
+    50
+  </meter>
+
+  <meter 
+    min="0" max="100"
+    low="33" high="67"
+    optimum="10" value="80">
+    80
+  </meter>
+
+  <br>
+
+  <meter 
+    min="0" max="100"
+    low="33" high="67"
+    optimum="90" value="20">
+    20
+  </meter>
+
+  <meter 
+    min="0" max="100"
+    low="33" high="67"
+    optimum="90" value="50">
+    50
+  </meter>
+
+  <meter 
+    min="0" max="100"
+    low="33" high="67"
+    optimum="90" value="80">
+    80
+  </meter>
+
+</body>
+</html>
