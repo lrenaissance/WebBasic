@@ -68,3 +68,32 @@ const person={
 }
 
 person.sayHello("totoro");
+
+
+//return
+function calculateKrAge(age){
+  return age+2;
+}
+
+const krAge=calculateKrAge(22);
+console.log(krAge);
+ 
+
+//conditionals
+//prompt(): 입력받기(alert처럼 생김)
+//parseInt(): string->int
+const age=parseInt(prompt("How old are you?"));
+console.log(typeof age); //typeof: 변수의 type을 알려줌(string, int...)
+
+if(isNaN(age)||age<0){//or
+  console.log("Please write a positive number.");//isNaN(): number인지 아닌지 알려줌
+}
+else if(age<18){
+  console.log("You are too young.");
+}
+else if(age>50 && age<=80){//and
+  console.log("You should excerise.");
+}
+else{
+  console.log("You can do whatever you want.");
+}
